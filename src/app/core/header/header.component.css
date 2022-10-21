@@ -1,0 +1,23 @@
+nav img{
+  max-width: 150px;
+}
+
+nav{
+  background-color: #8C1440;
+}
+
+.text {
+  color: #FFF
+}
+
+.text:hover{
+  color: #1E1E1E
+}
+
+.user{
+  padding: 1rem;
+}
+
+.espaco{
+  padding-right: 1rem;
+}

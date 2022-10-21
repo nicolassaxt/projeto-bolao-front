@@ -1,0 +1,278 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "user_name": "nicolas",
+      "user_email": "nicolas@teste.com.br",
+      "user_password": "123",
+      "user_full_name": "Nicolas Brasiliano",
+      "user_join_date": "2018-04-12 20:24:19"
+    },
+    {
+      "id": 2,
+      "user_name": "flavio",
+      "user_email": "flavio@teste.com.br",
+      "user_password": "123",
+      "user_full_name": "Flávio",
+      "user_join_date": "2018-04-12 20:24:19"
+    },
+    {
+      "id": 3,
+      "user_name": "rabuge",
+      "user_email": "rabuge@teste.com.br",
+      "user_password": "123",
+      "user_full_name": "Rabuge Luna",
+      "user_join_date": "2018-04-12 20:24:19"
+    },
+    {
+      "id": 4,
+      "user_name": "joao",
+      "user_email": "joao@teste.com.br",
+      "user_password": "123",
+      "user_full_name": "joao bugboss",
+      "user_join_date": "2018-04-12 20:24:19"
+    },
+    {
+      "id": 5,
+      "user_name": "pedro",
+      "user_email": "pedro@teste.com.br",
+      "user_password": "123",
+      "user_full_name": "pedro bala doida",
+      "user_join_date": "2018-04-12 20:24:19"
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "userName": "nicolasww",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "userName": "bbbbb",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "userName": "wqeqwe",
+      "password": "wqeqwe",
+      "id": 9
+    },
+    {
+      "userName": "123",
+      "password": "123",
+      "id": 10
+    },
+    {
+      "userName": "123",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "userName": "123",
+      "password": "123",
+      "id": 12
+    },
+    {
+      "userName": "ewqeq",
+      "password": "ewqeq",
+      "id": 13
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 14
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 15
+    },
+    {
+      "userName": "rabuge",
+      "password": "123",
+      "id": 16
+    },
+    {
+      "userName": "nicolas",
+      "password": "1231241",
+      "id": 17
+    },
+    {
+      "userName": "qweqe",
+      "password": "wqeqw",
+      "id": 18
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 19
+    },
+    {
+      "userName": "nicolas",
+      "password": "12wqeqwe",
+      "id": 20
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 21
+    },
+    {
+      "userName": "flavio",
+      "password": "123",
+      "id": 22
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 23
+    },
+    {
+      "userName": "nicolas",
+      "password": "123",
+      "id": 24
+    }
+  ],
+  "partidas": [
+    {
+      "id": 1,
+      "grupo": "Grupo A",
+      "description": "Catar x Equador",
+      "data": "2022-11-20T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/qatar.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 2,
+      "grupo": "Grupo A",
+      "description": "Senegal x Holanda",
+      "data": "2022-11-21T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/holland2.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 3,
+      "grupo": "Grupo A",
+      "description": "Catar x Senegal",
+      "data": "2022-11-25T10:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/senegal_2.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 4,
+      "grupo": "Grupo A",
+      "description": "Holanda x Equador",
+      "data": "2022-11-29T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/ecu.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 5,
+      "grupo": "Grupo A",
+      "description": "Equador x Senegal",
+      "data": "2022-11-29T12:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/senegal_2.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 6,
+      "grupo": "Grupo A",
+      "description": "Holanda x Catar",
+      "data": "2022-11-29T12:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-a/qatar.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 7,
+      "grupo": "Grupo B",
+      "description": "Inglaterra x Irã",
+      "data": "2022-11-20T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/eng_new.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 8,
+      "grupo": "Grupo B",
+      "description": "EUA x País de Gales",
+      "data": "2022-11-21T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/usa_new.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 9,
+      "grupo": "Grupo B",
+      "description": "País de Gales x Irã",
+      "data": "2022-11-25T10:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/iran.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 10,
+      "grupo": "Grupo B",
+      "description": "Inglaterra x EUA",
+      "data": "2022-11-29T13:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/eng_new.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 11,
+      "grupo": "Grupo B",
+      "description": "Irã x EUA",
+      "data": "2022-11-29T12:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/usa_new.png",
+      "usuariosId": 1
+    },
+    {
+      "id": 12,
+      "grupo": "Grupo B",
+      "description": "País de Gales x Inglaterra",
+      "data": "2022-11-29T12:00:00",
+      "vitoria": 0,
+      "empate": 0,
+      "derrota": 0,
+      "url": "/assets/escudo-selecoes/grupo-b/wales.png",
+      "usuariosId": 1
+    },
+    {
+      "userName": "qweqwe",
+      "password": "qweqw",
+      "id": 13
+    }
+  ]
+}

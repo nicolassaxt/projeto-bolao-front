@@ -1,0 +1,19 @@
+<div class="text-center mt-3 mb-3">
+  <form>
+      <input
+          class="rounded"
+          type="search"
+          placeholder="procurar jogo..."
+          autofocus
+          (keyup)="debounce.next(getValue($event))"
+          [value]="value"
+          >
+  </form>
+</div>
+
+<pb-bolaos [bolaos]="bolaos | filterByDescription: filter"></pb-bolaos>
+
+<pb-load-button
+  (click)="load()"
+  [hasMore]="hasMore">
+</pb-load-button>

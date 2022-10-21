@@ -1,0 +1,7 @@
+<div class="text-center" *ngIf="hasMore"; else messageTemplate>
+  <button class="btn btn-primary">Carregar mais Jogos</button>
+</div>
+
+<ng-template #messageTemplate>
+  <p class="text-center text-muted">Todos os jogos já disponiveis</p>
+</ng-template>
