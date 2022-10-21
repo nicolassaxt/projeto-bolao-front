@@ -1,0 +1,23 @@
+<footer class="mt-5" *ngIf="(user$ | async) as user">
+  <div class="fixed-bottom p-1 bg-footer">
+      <div class="container">
+          <div class="row text-center">
+            <div class="col-4">
+              <a [routerLink]="['bemvindo']" class="btn btn-primary">
+                Bem Vindo
+              </a>
+          </div>
+              <div class="col-4">
+                  <a [routerLink]="['']" class="btn btn-primary">
+                    Bolão
+                  </a>
+              </div>
+              <div class="col-4">
+                  <a [routerLink]="['list', 'add']" class="btn btn-primary">
+                    lista de participantes
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
