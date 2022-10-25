@@ -2,7 +2,7 @@
   Jogo não encontrado
 </p>
 
-<div class="container">
+<div class="container pd-bottom">
   <div *ngFor="let cols of rows" class="row">
       <div *ngFor="let bolao of cols" class="col-sm-4">
         <div class="card mt-3 mb-3">
@@ -14,13 +14,13 @@
             <p class="preco">{{ bolao.data | date:'HH:mm'}}</p>
 
             <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
-            <label class="btn btn-outline-success" for="success-outlined">Vitoria</label>
+            <label (click)="vitoria(bolao)" class="btn btn-outline-success" for="success-outlined">Vitoria</label>{{ bolao.vitoria }}
 
             <input type="radio" class="btn-check" name="options-outlined" id="secondary-outlined" autocomplete="off">
-            <label class="btn btn-outline-secondary" for="secondary-outlined">Empate</label>
+            <label (click)="empate(bolao)" class="btn btn-outline-secondary" for="secondary-outlined">Empate</label>{{ bolao.empate }}
 
             <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-            <label class="btn btn-outline-danger" for="danger-outlined">Derrota</label>
+            <label (click)="derrota(bolao)" class="btn btn-outline-danger" for="danger-outlined">Derrota</label>{{ bolao.derrota }}
 
           </div>
         </div>

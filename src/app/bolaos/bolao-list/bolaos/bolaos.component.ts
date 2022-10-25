@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Bolao } from '../../bolao/bolao';
+import { BolaoService } from '../../bolao/bolao.service';
 
 @Component({
   selector: 'pb-bolaos',
@@ -11,7 +13,11 @@ export class BolaosComponent implements OnChanges{
  @Input() bolaos: Bolao[] = [];
   rows: any[] = [];
 
-  constructor() { }
+  bolao$!: Observable<Bolao>;
+
+  constructor(
+    private bolaoService: BolaoService
+  ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['bolaos'])
@@ -28,5 +34,32 @@ export class BolaosComponent implements OnChanges{
     }
 
     return newRows;
+  }
+
+  vitoria(bolao: Bolao){
+    this.bolaoService.vitoria(bolao.id)
+    .subscribe(vitoria =>{
+      if(vitoria){
+        this.bolao$ = this.bolaoService.findById(bolao.id);
+      }
+    });
+  }
+
+  empate(bolao: Bolao){
+    this.bolaoService.empate(bolao.id)
+    .subscribe(empate =>{
+      if(empate){
+        this.bolao$ = this.bolaoService.findById(bolao.id);
+      }
+    });
+  }
+
+  derrota(bolao: Bolao){
+    this.bolaoService.derrota(bolao.id)
+    .subscribe(derrota =>{
+      if(derrota){
+        this.bolao$ = this.bolaoService.findById(bolao.id);
+      }
+    });
   }
 }

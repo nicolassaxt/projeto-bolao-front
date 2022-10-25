@@ -29,8 +29,10 @@ export class BolaoListComponent implements OnInit, OnDestroy {
     ){}
 
   ngOnInit(): void {
-    this.userName = this.activatedRoute.snapshot.params['userName'];
-    this.bolaos = this.activatedRoute.snapshot.data['bolaos'];
+    this.activatedRoute.params.subscribe(params =>{
+      this.userName = params['userName'];
+      this.bolaos = this.activatedRoute.snapshot.data['bolaos'];
+    });
     this.debounce
     .pipe(debounceTime(300))
     .subscribe(filter => this.filter = filter);

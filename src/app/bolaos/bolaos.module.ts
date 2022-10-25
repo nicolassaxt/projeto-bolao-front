@@ -9,15 +9,19 @@ import { FilterByDescription } from './bolao-list/filter-by-description.pipe';
 import { LoadButtonComponent } from './bolao-list/load-button/load-button.component';
 import { BolaoModule } from './bolao/bolao.module';
 import { BolaoListModule } from './bolao-list/bolao-list.module';
+import { RouterModule } from '@angular/router';
+import { BolaoBemVindoComponent } from './bolao-bem-vindo/bolao-bem-vindo.component';
 
 
 
 
 @NgModule({
-
+  declarations: [BolaoBemVindoComponent],
   imports: [
+    CommonModule,
     BolaoModule,
-    BolaoListModule
+    BolaoListModule,
+    RouterModule,
   ]
 })
 export class BolaosModule{}

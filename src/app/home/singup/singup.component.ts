@@ -66,7 +66,7 @@ export class SignupComponent implements OnInit{
     signUpService
     .signup(newUser)
     .subscribe(
-      () => this.router.navigate(['']), //se registar é encaminhado para tela de login
+      () => {this.router.navigate([''])}, //se registar é encaminhado para tela de login
       err => console.log(err));
   }
 }

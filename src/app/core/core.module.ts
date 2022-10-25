@@ -7,6 +7,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './auth/request.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AlertModule } from '../shared/components/alert/alert.module';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    AlertModule //levar mensagem de sucesso ao confirmar jogo no Header
   ],
   providers: [
     {

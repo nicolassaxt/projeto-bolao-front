@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { BolaoListComponent } from './bolaos/bolao-list/bolao-list.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { BolaoListResolver } from './bolaos/bolao-list/bolao-list.resolver';
+import { BolaoBemVindoComponent } from './bolaos/bolao-bem-vindo/bolao-bem-vindo.component';
+import { BolaoListUsers } from './bolaos/bolao-list-users/bolao-list-users.component';
+import { AuthGuard } from './core/auth/auth.guard';
+
+
 
 
 const routes: Routes = [
@@ -18,13 +23,28 @@ const routes: Routes = [
   {
     path: 'user/:userName',
     component: BolaoListComponent,
+    canActivate: [AuthGuard],
     resolve: {
       bolaos: BolaoListResolver
     }
   },
   {
-    path: '**',
+    path: 'list',
+    component: BolaoListUsers,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'bemvindo',
+    component: BolaoBemVindoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'not-found',
     component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found'
   }
 ];
 
