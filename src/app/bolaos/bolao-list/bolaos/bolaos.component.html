@@ -14,13 +14,13 @@
             <p class="preco">{{ bolao.data | date:'HH:mm'}}</p>
 
             <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
-            <label (click)="vitoria(bolao)" class="btn btn-outline-success" for="success-outlined">Vitoria</label>{{ bolao.vitoria }}
+            <label (click)="vitoria(bolao)" class="btn btn-outline-success" for="success-outlined">{{ bolao.time_1 }}</label>{{ bolao.vitoria }}
 
             <input type="radio" class="btn-check" name="options-outlined" id="secondary-outlined" autocomplete="off">
             <label (click)="empate(bolao)" class="btn btn-outline-secondary" for="secondary-outlined">Empate</label>{{ bolao.empate }}
 
             <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-            <label (click)="derrota(bolao)" class="btn btn-outline-danger" for="danger-outlined">Derrota</label>{{ bolao.derrota }}
+            <label (click)="derrota(bolao)" class="btn btn-outline-success" for="danger-outlined">{{ bolao.time_2}}</label>{{ bolao.derrota }}
 
           </div>
         </div>
