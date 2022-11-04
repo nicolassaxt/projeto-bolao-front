@@ -9,7 +9,7 @@
           <pb-bolao class="text-center" [url]="bolao.url" [description]="bolao.description" pbDarkenOnHover></pb-bolao>
           <div class="card-block text-center">
             <h3 class="card-title">{{ bolao.description }}</h3>
-            <h4 class="card-subtitle mb-2 text-muted">Grupo {{ bolao.grupo }}</h4>
+            <h4 class="card-subtitle mb-2 text-muted">{{ bolao.grupo }}</h4>
             <p class="card-text">{{ bolao.data | date: 'd/M/yy' }}</p>
             <p class="preco">{{ bolao.data | date:'HH:mm'}}</p>
 
