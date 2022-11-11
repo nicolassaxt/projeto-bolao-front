@@ -9,7 +9,7 @@ export class FilterByDescription implements PipeTransform{
 
     if(descriptionQuery){
       return bolaos.filter(bolao =>
-        bolao.description.toLowerCase().includes(descriptionQuery)
+        bolao.timeAId.nomeTime.toLowerCase().includes(descriptionQuery) || bolao.timeBId.nomeTime.toLowerCase().includes(descriptionQuery)
         );
     }else{
       return bolaos;

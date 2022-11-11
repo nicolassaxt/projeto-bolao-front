@@ -40,7 +40,7 @@ export class UserService{
     return this.tokenService.hasToken();
   }
 
-  getUserName(){ 
+  getUserName(){
     return this.userName;
   }
 }

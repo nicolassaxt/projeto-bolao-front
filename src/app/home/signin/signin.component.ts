@@ -24,13 +24,13 @@ export class SignInComponent implements OnInit{
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
-    this.platFormDetectorService.isPlatformBrowser() && this.userNameInput.nativeElement.focus();
+
   }
 
   login(){
 
-    const userName = this.loginForm.get('userName')?.value;
-    const password = this.loginForm.get('password')?.value;
+    const userName = this.loginForm.controls['userName'].value
+    const password = this.loginForm.controls['password'].value
 
     this.authService
     .authenticate(userName, password)
@@ -39,7 +39,6 @@ export class SignInComponent implements OnInit{
       err => {
         console.log(err);
         this.loginForm.reset();
-        this.platFormDetectorService.isPlatformBrowser() && this.userNameInput.nativeElement.focus();
         alert('User name ou senha invalida');
       }
       );

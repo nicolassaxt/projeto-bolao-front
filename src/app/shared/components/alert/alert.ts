@@ -14,4 +14,4 @@ export enum AlertType{
     INFO
 }
 
-const alert = new Alert(AlertType.SUCCESS, 'Operação concluída com sucesso');
+const alert = new Alert(AlertType.SUCCESS, 'Partida apostada com sucesso!');

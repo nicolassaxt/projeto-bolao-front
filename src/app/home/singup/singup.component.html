@@ -1,82 +1,77 @@
 <div class="container">
   <h2 class="text-center"> Faça o seu cadastro agora para participar do bolão!</h2>
 
-  <form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
+  <form [formGroup]="signupForm" class="form mt-4" (submit)="register()">
     <div class="mb-3">
       <label class="form-label">Email</label>
-      <input #emailInput formControlName="email" class="form-control">
+      <input #emailInput formControlName="user_email" class="form-control">
       <pb-vmessage
-        *ngIf="signupForm.get('email')?.errors?.['required']"
+        *ngIf="signupForm.get('user_email')?.errors?.['required']"
         text="Email obrigatorio!">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('email')?.errors?.['email']"
+        *ngIf="signupForm.get('user_email')?.errors?.['email']"
         text="Email invalido.">
       </pb-vmessage>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Nome completo</label>
-      <input formControlName="fullName" class="form-control">
+      <input formControlName="user_full_name" class="form-control">
       <pb-vmessage
-      *ngIf="signupForm.get('fullName')?.errors?.['required']"
+      *ngIf="signupForm.get('user_full_name')?.errors?.['required']"
       text="Nome completo obrigatorio!">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('fullName')?.errors?.['minlength']"
+        *ngIf="signupForm.get('user_full_name')?.errors?.['minlength']"
         text="O minimo de letras são 2">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('fullName')?.errors?.['maxlength']"
+        *ngIf="signupForm.get('user_full_name')?.errors?.['maxlength']"
         text="O Maximo de letras são 40">
       </pb-vmessage>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Nome de usuario</label>
-      <input formControlName="userName" class="form-control">
+      <input formControlName="username" class="form-control">
       <pb-vmessage
-      *ngIf="signupForm.get('userName')?.errors?.['required']"
+      *ngIf="signupForm.get('username')?.errors?.['required']"
       text="Nome de usuario obrigatorio!">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('userName')?.errors?.['minlength']"
+        *ngIf="signupForm.get('username')?.errors?.['minlength']"
         text="O minimo de letras são 2">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('userName')?.errors?.['maxlength']"
+        *ngIf="signupForm.get('username')?.errors?.['maxlength']"
         text="O Maximo de letras são 30">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('userName')?.errors?.['lowerCase']"
+        *ngIf="signupForm.get('username')?.errors?.['lowerCase']"
         text="Começe com letra minúscula">
       </pb-vmessage>
       <pb-vmessage
         text="Username já existe"
-        *ngIf="signupForm.get('userName')?.errors?.['userNameTaken']">
+        *ngIf="signupForm.get('username')?.errors?.['userNameTaken']">
       </pb-vmessage>
-      <small *ngIf="signupForm.get('userName')?.valid" class="text-success">User disponível</small>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Senha</label>
       <input formControlName="password" type="password" class="form-control">
       <pb-vmessage
-      *ngIf="signupForm.get('password')?.errors?.['required']"
-      text="Senha obrigatoria!">
-      </pb-vmessage>
-      <pb-vmessage
-        *ngIf="signupForm.get('password')?.errors?.['minlength']"
+        *ngIf="signupForm.get('user_password')?.errors?.['minlength']"
         text="O minimo de caracteres são 8">
       </pb-vmessage>
       <pb-vmessage
-        *ngIf="signupForm.get('password')?.errors?.['maxlength']"
+        *ngIf="signupForm.get('user_password')?.errors?.['maxlength']"
         text="O Maximo da senha são 14 caracteres">
       </pb-vmessage>
     </div>
 
 
-      <button [disabled]="signupForm.invalid || signupForm.pending" class="btn btn-primary btn-block">Cadastrar</button>
+      <button class="btn btn-primary btn-block">Cadastrar</button>
 
       <p>Já é um usuario? <a [routerLink]="['']" class="text-primary"> Faça o login!</a></p>
   </form>

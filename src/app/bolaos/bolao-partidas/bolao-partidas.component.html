@@ -1,0 +1,37 @@
+<div class="bg-white border container" *ngIf="(bolao$ | async) as bolao">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="container">
+        <div class="col-sm-6" style="float: left;">
+          <img class="card-img-top img-fluid d-sm-block" style="width: 150px;" [src]="bolao.timeAId.imgUrlTime" >
+        </div>
+
+        <div class="col-sm-6" style="float: right;">
+          <img class="card-img-top img-fluid d-sm-block" style="width: 150px;" [src]="bolao.timeBId.imgUrlTime" >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 p-4">
+        <div class="text-center">
+          <h3 class="text-left break-word">{{bolao.timeAId.nomeTime}}</h3>
+          <p>Vs</p>
+          <h3 class="text-left break-word">{{bolao.timeBId.nomeTime}}</h3>
+          <hr>
+        </div>
+
+      <div class="mt-4 text-center">
+        <form>
+          <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+          <label (click)="vitoriaA(bolao)" class="btn btn-outline-success" for="success-outlined">{{ bolao.timeAId.nomeTime }}</label><!-- vitoria1 -->
+
+          <input type="radio" class="btn-check" name="options-outlined" id="secondary-outlined" autocomplete="off">
+          <label (click)="empate(bolao)" class="btn btn-outline-secondary" for="secondary-outlined">Empate</label>
+
+          <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+          <label (click)="votoriaB(bolao)" class="btn btn-outline-success" for="danger-outlined">{{ bolao.timeBId.nomeTime}}</label><!-- vitoria2 -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

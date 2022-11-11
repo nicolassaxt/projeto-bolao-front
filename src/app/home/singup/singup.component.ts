@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { lowerCaseValidator } from '../../shared/validators/lower-case.validator';
-import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { NewUser } from './new-user';
 import { SignUpService } from './signup.service';
 import { Router } from '@angular/router';
 import { PlatFormDetectorService } from '../../core/plataform-detector/platform-detector.service';
+import { Users } from '../../bolaos/bolao-list-users/users';
 
 @Component({
   templateUrl: './singup.component.html',
-  providers: [ UserNotTakenValidatorService ]
+
 })
 
 export class SignupComponent implements OnInit{
@@ -19,7 +19,6 @@ export class SignupComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private userNotTakenValidatorService: UserNotTakenValidatorService,
     private signUpService: SignUpService,
     private router: Router,
     private platFormDetectorService: PlatFormDetectorService
@@ -27,29 +26,29 @@ export class SignupComponent implements OnInit{
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      email: ['',
+      user_email: ['',
       [
         Validators.required,
         Validators.email
       ]
     ],
-      fullName: ['',
+    user_full_name: ['',
       [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(40)
       ]
     ],
-      userName: ['',
+    username: ['',
        [
         Validators.required,
         lowerCaseValidator,     //validação criada
         Validators.minLength(2),
         Validators.maxLength(30)
       ],
-      this.userNotTakenValidatorService.checkUserNameTaken() //validador assincrono para comparar usuario se já existente
+
     ],
-      password: ['',
+    user_password: ['',
       [
         Validators.required,
         Validators.minLength(8),
@@ -60,13 +59,17 @@ export class SignupComponent implements OnInit{
     this.platFormDetectorService.isPlatformBrowser() && this.emailInput.nativeElement.focus();
   }
 
-  signup(){ //envio de formulario
-    const newUser = this.signupForm.getRawValue() as NewUser;
-    this.
-    signUpService
-    .signup(newUser)
-    .subscribe(
-      () => {this.router.navigate([''])}, //se registar é encaminhado para tela de login
-      err => console.log(err));
+  register() {
+    this.signUpService
+      .register(
+        this.signupForm.controls['username'].value,
+        this.signupForm.controls['user_email'].value,
+        this.signupForm.controls['user_full_name'].value,
+        this.signupForm.controls['user_password'].value
+      )
+      .subscribe(() => {
+        this.router.navigate([''])
+      }),
+      (err: Error) => console.log(`Erro ao realizar o Register -> ${err}`);
   }
 }

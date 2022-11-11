@@ -3,30 +3,30 @@ import { Subject } from 'rxjs';
 import { Alert, AlertType } from './alert';
 import { NavigationStart, Router } from '@angular/router';
 
-@Injectable({providedIn: 'root'})
-export class AlertService{
+@Injectable({ providedIn: 'root'})
+export class AlertService {
 
   alertSubject: Subject<Alert> = new Subject<Alert>();
   keepAfterRouteChange = false;
 
-  constructor(router: Router){
+  constructor(router: Router) {
 
-    router.events.subscribe(event =>{ //não deixa o alert ir para outra tela
-      if(event instanceof NavigationStart){
-        if(this.keepAfterRouteChange){
-          this.keepAfterRouteChange = false;
-        } else{
-          this.clear();
+    router.events.subscribe(event => {
+        if(event instanceof NavigationStart) {
+            if(this.keepAfterRouteChange) {
+                this.keepAfterRouteChange = false;
+            } else {
+                this.clear();
+            }
         }
-      }
     })
-  }
+}
 
-  success(message: string,  keepAfterRouteChange: boolean = false){
+  success(message: string, keepAfterRouteChange: boolean = false){
     this.alert(AlertType.SUCCESS, message, keepAfterRouteChange);
   }
 
-   warning(message: string, keepAfterRouteChange: boolean = false){
+  warning(message: string, keepAfterRouteChange: boolean = false){
     this.alert(AlertType.WARNING, message, keepAfterRouteChange);
   }
 
@@ -46,8 +46,7 @@ export class AlertService{
   getAlert(){
     return this.alertSubject.asObservable();
   }
-
   clear(){
-    this.alertSubject.next(null!);
+   // this.alertSubject.next(null!);
   }
 }

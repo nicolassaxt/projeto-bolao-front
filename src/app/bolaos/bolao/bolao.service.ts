@@ -2,10 +2,11 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Bolao } from './bolao';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
+import { User } from '../../core/user/user';
 
-const API = 'http://localhost:3001'
+const API = 'http://localhost:8080'
 
 @Injectable({providedIn: 'root'})
 export class BolaoService{
@@ -14,9 +15,16 @@ export class BolaoService{
 
   }
 
+  list(){
+    return this.http.get<Bolao[]>(API +'/partida')
+    .pipe(
+      tap(console.log)
+    )
+  }
+
   listFromUser(userName: string){
     return this.http
-      .get<Bolao []>( API +'/partidas');
+      .get<Bolao []>( API +'/partida');
   }
 
   listFromUserPaginated(userName: string, page: number){
@@ -24,17 +32,17 @@ export class BolaoService{
     .append('page', page.toString());
 
     return this.http
-      .get<Bolao []>( API +'/partidas', {params});
+      .get<Bolao []>( API +'/partida', {params});
   }
 
   findById(bolaoId: number) {
 
-    return this.http.get<Bolao>(API + '/partidas/' + bolaoId);
+    return this.http.get<Bolao>(API + '/partida/' + bolaoId);
 }
 
-  vitoria(bolaoId: number){
+  vitoriaA(bolaoId: number){
     return this.http.post(
-      API +'/partidas/' + bolaoId+ '/vitoria', {}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
+      API +'/aposta', {"status": "TIMEA","usuarioId": 2,"partidaId": bolaoId}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
     )
     .pipe(map(res => true))
     .pipe(catchError( err =>{
@@ -45,7 +53,7 @@ export class BolaoService{
 
   empate(bolaoId: number){
     return this.http.post(
-      API +'/partidas/' + bolaoId+ '/empate', {}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
+      API +'/aposta', {"status": "EMPATE","usuarioId": 2,"partidaId": bolaoId}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
     )
     .pipe(map(res => true))
     .pipe(catchError( err =>{
@@ -54,9 +62,9 @@ export class BolaoService{
 
   }
 
-  derrota(bolaoId: number){
+  votoriaB(bolaoId: number){
     return this.http.post(
-      API +'/partidas/' + bolaoId+ '/derrota', {}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
+      API +'/aposta', {"status": "TIMEB","usuarioId": 2,"partidaId": bolaoId}, {observe: 'response'} //terceiro paramentro para pegar o status do retorno: 200, 304 ...
     )
     .pipe(map(res => true))
     .pipe(catchError( err =>{

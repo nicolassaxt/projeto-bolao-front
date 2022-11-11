@@ -8,7 +8,7 @@ import { BolaoService } from '../../bolao/bolao.service';
   templateUrl: './bolaos.component.html',
   styleUrls: ['./bolaos.component.css']
 })
-export class BolaosComponent implements OnChanges{
+export class BolaosComponent implements OnChanges, OnInit{
 
  @Input() bolaos: Bolao[] = [];
   rows: any[] = [];
@@ -18,6 +18,11 @@ export class BolaosComponent implements OnChanges{
   constructor(
     private bolaoService: BolaoService
   ) { }
+  ngOnInit(): void {
+    this.bolaoService.list()
+    .subscribe
+    (dados => this.bolaos = dados);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['bolaos'])
@@ -36,30 +41,5 @@ export class BolaosComponent implements OnChanges{
     return newRows;
   }
 
-  vitoria(bolao: Bolao){
-    this.bolaoService.vitoria(bolao.id)
-    .subscribe(vitoria =>{
-      if(vitoria){
-        this.bolao$ = this.bolaoService.findById(bolao.id);
-      }
-    });
-  }
 
-  empate(bolao: Bolao){
-    this.bolaoService.empate(bolao.id)
-    .subscribe(empate =>{
-      if(empate){
-        this.bolao$ = this.bolaoService.findById(bolao.id);
-      }
-    });
-  }
-
-  derrota(bolao: Bolao){
-    this.bolaoService.derrota(bolao.id)
-    .subscribe(derrota =>{
-      if(derrota){
-        this.bolao$ = this.bolaoService.findById(bolao.id);
-      }
-    });
-  }
 }

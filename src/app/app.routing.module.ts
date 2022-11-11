@@ -4,8 +4,9 @@ import { BolaoListComponent } from './bolaos/bolao-list/bolao-list.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { BolaoListResolver } from './bolaos/bolao-list/bolao-list.resolver';
 import { BolaoBemVindoComponent } from './bolaos/bolao-bem-vindo/bolao-bem-vindo.component';
-import { BolaoListUsers } from './bolaos/bolao-list-users/bolao-list-users.component';
+import {BolaoListUsersComponent } from './bolaos/bolao-list-users/bolao-list-users.component';
 import { AuthGuard } from './core/auth/auth.guard';
+import { BolaoPartidasComponent } from './bolaos/bolao-partidas/bolao-partidas.component';
 
 
 
@@ -30,8 +31,12 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    component: BolaoListUsers,
+    component: BolaoListUsersComponent,
     canActivate: [AuthGuard]
+  },
+   {
+    path: 'partidas/:partidaId',
+    component: BolaoPartidasComponent,
   },
   {
     path: 'bemvindo',

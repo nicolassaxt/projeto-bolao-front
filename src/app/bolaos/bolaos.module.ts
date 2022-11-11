@@ -11,6 +11,8 @@ import { BolaoModule } from './bolao/bolao.module';
 import { BolaoListModule } from './bolao-list/bolao-list.module';
 import { RouterModule } from '@angular/router';
 import { BolaoBemVindoComponent } from './bolao-bem-vindo/bolao-bem-vindo.component';
+import { BolaoPartidasModule } from './bolao-partidas/bolao-partidas.module';
+import { BolaoListUsersModule } from './bolao-list-users/bolao-list-users.module';
 
 
 
@@ -21,6 +23,8 @@ import { BolaoBemVindoComponent } from './bolao-bem-vindo/bolao-bem-vindo.compon
     CommonModule,
     BolaoModule,
     BolaoListModule,
+    BolaoListUsersModule,
+    BolaoPartidasModule,
     RouterModule,
   ]
 })

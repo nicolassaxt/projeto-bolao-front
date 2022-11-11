@@ -7,6 +7,8 @@ import { BolaoModule } from '../bolao/bolao.module';
 import { BolaosComponent } from './bolaos/bolaos.component';
 import { DarkenOnHoverModule } from '../../shared/directives/darken-on-hover.module';
 
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { DarkenOnHoverModule } from '../../shared/directives/darken-on-hover.mod
   imports: [
     CommonModule,
     BolaoModule,
-    DarkenOnHoverModule
+    DarkenOnHoverModule,
+    RouterModule
   ]
 })
 export class BolaoListModule{}
