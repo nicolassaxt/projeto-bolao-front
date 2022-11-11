@@ -4,7 +4,7 @@ import { NewUser } from './new-user';
 import { Users } from '../../bolaos/bolao-list-users/users';
 import { Observable } from 'rxjs';
 
-const API = 'http://localhost:8080/user';
+const API = 'https://bolao-back-java.herokuapp.com/user';
 
 @Injectable()
 export class SignUpService{

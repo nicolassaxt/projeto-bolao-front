@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { User } from '../../core/user/user';
 
-const API = 'http://localhost:8080'
+const API = 'https://bolao-back-java.herokuapp.com'
 
 @Injectable({providedIn: 'root'})
 export class BolaoService{
